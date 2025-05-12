@@ -1,0 +1,64 @@
+body{
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+h1 .cadastro{
+    text-align: center;
+}
+p .cadastro{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+}
+.um{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.cadastros{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+.cadastro{
+    display: flex;
+    flex-direction: line;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Botao {
+    border: solid 1px blue;
+    background-color: lightblue;
+    color: black;
+    border-radius: 10%;
+    text-align: center;
+    min-height: 50px;
+    min-width: 150px;
+}
+.aoman {
+    text-align: center;
+}
+.blocoFlutua {
+    transform-origin: center;
+    animation: blocoFlutua 2s infinite linear;
+}
+
+@keyframes blocoFlutua {
+    0% { transform: translateY(0px) rotateZ(0deg);}
+    25% { transform: translateY(-5px) rotateZ(-2deg);}
+    75% { transform: translateY(5px) rotateZ(2deg);}
+    100% { transform: translateY(0) rotateZ(0deg);}
+}
