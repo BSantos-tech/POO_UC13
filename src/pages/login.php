@@ -4,22 +4,22 @@ require __DIR__ . "/../classes/login.php";
 $usuario = $senha = "";
 $loginCriado = false;
 
-//Cadastrando
+// Cadastrando
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = trim($_POST["usuario"]);
     $senha = trim($_POST["senha"]);
 
     try {
         $login = new Login($usuario, $senha);
+        $login->salvarDados(); // Salva os dados no banco
         $loginCriado = true;
     } catch (Exception $e) {
         echo "<div class='alert alert-danger mt-3'>" . $e->getMessage() . "</div>";
     }
 }
-
 ?>
 
-<h2>Cadastro de login</h2>
+<h2 class="text-center container mb-12">Cadastro de login</h2>
 
 <form method="post" class="row g-3 mb-4">
  
@@ -33,13 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="mb-3">
                         <label for="usuario" class="form-label">Usuário (e-mail):</label>
                         <input type="email" name="usuario" id="usuario" class="form-control" required>
-                        value="<?= htmlspecialchars($usuario) ?>">
+                        <?= htmlspecialchars($usuario) ?>
                     </div>
  
                     <div class="mb-3">
                         <label for="senha" class="form-label">Senha:</label>
-                        <input type="password" name="senha" id="senha" class="form-control" required>
-                        value="<?= htmlspecialchars($senha) ?>">
+                        <input type="password" name="senha" id="senha" class="form-control" >
+                        <?= htmlspecialchars($senha) ?>
                     </div>
  
                     <div class="d-grid">
@@ -55,9 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 
 <?php if ($loginCriado) {
-    echo "<h3>Resultado:</h3>";
-    $login->salvarDados();
+    echo "<h3>Cadastro realizado com sucesso!</h3>";
 }
 ?>
-
- 

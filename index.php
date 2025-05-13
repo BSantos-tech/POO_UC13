@@ -1,8 +1,9 @@
 <?php
+require("db/conexao.php");
 include("src/views/Header.php");
 
 //Roteamento opaganastar 
-$page = isset($_GET['page']) ? $_GET['page'] : 'principal';
+$page = isset($_GET['page']) ? $_GET['page'] : 'login';
 switch ($page) {
     case 'cad_aluno':
         include("src/pages/cad_aluno.php");
@@ -13,11 +14,11 @@ switch ($page) {
     case 'cad_escola':
         include("src/pages/cad_escola.php");
         break;
-    case 'login':
-        include("src/pages/login.php");
+    case 'principal':
+        include("src/pages/principal.php");
         break;
     default:
-        include("src/pages/principal.php");
+        include("src/pages/login.php");
         break;
 }
 

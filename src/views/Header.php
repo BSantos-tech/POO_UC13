@@ -1,8 +1,7 @@
 <?php
 session_start();
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$page = isset($_GET['page']) ? $_GET['page'] : 'login';
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
