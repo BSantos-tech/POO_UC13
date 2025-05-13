@@ -1,9 +1,7 @@
 <?php
-require("db/conexao.php");
+$page = isset($_GET['page']) ? $_GET['page'] : 'login';
 include("src/views/Header.php");
 
-//Roteamento opaganastar 
-$page = isset($_GET['page']) ? $_GET['page'] : 'login';
 switch ($page) {
     case 'cad_aluno':
         include("src/pages/cad_aluno.php");
