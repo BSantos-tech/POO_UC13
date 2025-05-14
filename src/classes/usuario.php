@@ -1,7 +1,7 @@
 <?php
 include 'db/conexao.php';
 
-class usuario {
+class Usuario {
     private $conn;
  
     public function __construct() {
@@ -9,7 +9,7 @@ class usuario {
     }
  
     public function autenticar($email, $senha) {
-        $sql = "SELECT * FROM login WHERE email = :email LIMIT 1";
+        $sql = "SELECT * FROM login WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
