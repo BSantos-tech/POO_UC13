@@ -53,5 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
  
 </form>
-    
-?>
+
+<?php if (isset($loginValido) && $loginValido): ?>
+    <div class="alert alert-success mt-3">
+        Login realizado com sucesso!
+    </div
+   
